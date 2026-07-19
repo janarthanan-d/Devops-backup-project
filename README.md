@@ -31,29 +31,6 @@ Built with a clean, dark-themed UI so critical status information (success / fai
 
 ---
 
-## 🖥️ Screenshots
-
-### Login
-Secure sign-in gate for the recovery console.
-
-![Login Screen](./screenshots/login.png)
-
-### Dashboard
-System overview — total backups, success/failure counts, recoveries, and backup status at a glance.
-
-![Dashboard](./screenshots/dashboard.png)
-
-### Backups
-Create and manage pipeline backups, with source, type, size, storage, and creation date tracked per entry.
-
-![Backups](./screenshots/backups.png)
-
-### Disaster Recovery
-Restore pipelines from any previous backup snapshot and review recovery history.
-
-![Disaster Recovery](./screenshots/disaster-recovery.png)
-
----
 
 ## 🧱 Tech Stack
 
@@ -111,21 +88,90 @@ MONGODB_URI=your_mongodb_connection_string
 
 ## 🗂️ Project Structure
 
+# 📂 Project Structure
+
 ```
-devops-backup/
-├── public/
-├── src/
-│   ├── components/
-│   ├── pages/
-│   │   ├── Dashboard.jsx
-│   │   ├── Backups.jsx
-│   │   ├── Recovery.jsx
-│   │   └── Login.jsx
-│   ├── App.jsx
-│   └── index.js
-├── screenshots/
-├── package.json
+Devops-backup-project/
+│
+├── 📁 backend/
+│   ├── 📁 config/
+│   │   └── db.js
+│   │
+│   ├── 📁 controllers/
+│   │   ├── authController.js
+│   │   ├── backupController.js
+│   │   ├── dashboardController.js
+│   │   └── recoveryController.js
+│   │
+│   ├── 📁 middleware/
+│   │   └── authMiddleware.js
+│   │
+│   ├── 📁 models/
+│   │   ├── Backup.js
+│   │   ├── Recovery.js
+│   │   └── User.js
+│   │
+│   ├── 📁 routes/
+│   │   ├── authRoutes.js
+│   │   ├── backupRoutes.js
+│   │   ├── dashboardRoutes.js
+│   │   └── recoveryRoutes.js
+│   │
+│   ├── 📁 services/
+│   │   ├── backupService.js
+│   │   ├── notificationService.js
+│   │   ├── schedulerService.js
+│   │   └── storageService.js
+│   │
+│   ├── 📁 utils/
+│   │   ├── helpers.js
+│   │   ├── logger.js
+│   │   ├── mailer.js
+│   │   └── scheduler.js
+│   │
+│   ├── .env
+│   ├── package.json
+│   ├── package-lock.json
+│   └── server.js
+│
+├── 📁 frontend/
+│   ├── 📁 public/
+│   │   ├── favicon.ico
+│   │   ├── index.html
+│   │   ├── logo192.png
+│   │   ├── logo512.png
+│   │   ├── manifest.json
+│   │   └── robots.txt
+│   │
+│   ├── 📁 src/
+│   │   ├── 📁 components/
+│   │   │   ├── Layout.js
+│   │   │   ├── Navbar.js
+│   │   │   └── Sidebar.js
+│   │   │
+│   │   ├── 📁 pages/
+│   │   │   ├── Dashboard.js
+│   │   │   ├── Backups.js
+│   │   │   ├── Recovery.js
+│   │   │   └── Login.js
+│   │   │
+│   │   ├── App.js
+│   │   ├── App.css
+│   │   ├── index.js
+│   │   ├── index.css
+│   │   ├── logo.svg
+│   │   ├── reportWebVitals.js
+│   │   └── setupTests.js
+│   │
+│   ├── package.json
+│   ├── package-lock.json
+│   └── README.md
+│
+├── .gitignore
+├── docker-compose.yml
+├── LICENSE
 └── README.md
+```
 ```
 
 ---
